@@ -1,0 +1,33 @@
+<html>
+{% include 'base.html' %}
+<center><h1>{{title}}</h1>
+
+<table align='center' border=2>
+<thead>
+<tr>
+    <th>S.No</th>
+    <th>NAME</th>
+    <th>CLASS</th>
+    <th>ADDRESS</th>
+    <th>SCHOOL</th>
+    <th>E-MAIL</th>
+</tr>
+</thead>   
+{% for query in queryset%}
+<tbody>
+<tr>
+<td>{{forloop.counter}}</td>
+<td>{{query.s_name}}</td>
+<td>{{query.s_class}}</td>
+<td>{{query.s_addr}}</td>
+<td>{{query.s_school}}</td>
+<td>{{query.s_email}}</td>
+</tr>
+</tbady>
+{% empty%}
+<h2>No Data Found</h2>
+{%endfor%}
+
+</table>
+</center>
+</html>
